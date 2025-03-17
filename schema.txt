@@ -1,0 +1,10 @@
+PulseMonitor/
+├── android/
+├── ios/
+├── src/
+│   ├── components/ (UI элементы: Card, List)
+│   ├── services/ (Bluetooth, Firebase)
+│   ├── screens/ (Login, Dashboard, DeviceSettings)
+│   └── App.js
+├── firebase.json (настройки Firebase)
+└── package.json

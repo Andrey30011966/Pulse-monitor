@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pulse Monitor</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+<!-- public/index.html -->
+<script>
+document.querySelector('form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // Вывод данных формы в консоль
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    console.log("Отправленные данные:", data);
+
+    try {
+        const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        console.log("Ответ сервера:", result);
+    } catch (error) {
+        console.error("Ошибка:", error);
+    }
+});
+</script>
